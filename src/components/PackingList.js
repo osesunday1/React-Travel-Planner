@@ -8,6 +8,10 @@ export default function PackingList({ addItem, setAddItem, handleToggleItem }) {
     setAddItem(addItem.filter(item => item.id !== id));
   }
 
+  function clearListHandler(){
+    setAddItem(e=> addItem.splice(0, arr.length))
+  }
+
   let sortedItem
 
   if (sortBy === 'input') sortedItem = addItem
@@ -15,7 +19,7 @@ export default function PackingList({ addItem, setAddItem, handleToggleItem }) {
   }
   if (sortBy === "packed"){sortedItem =addItem.slice().sort((a,b)=> Number(a.packed)- Number (b.packed))}
 
-
+let arr = [1,2,3,4,5,6]
   return (
     <>
       <div className="list">
@@ -34,7 +38,7 @@ export default function PackingList({ addItem, setAddItem, handleToggleItem }) {
             <option value="description"> Sort by description</option>
             <option value="packed"> Sort by packed status</option>
           </select>
-
+            <button onClick={clearListHandler}>Clear List</button>
         </div>
       </div>
     </>

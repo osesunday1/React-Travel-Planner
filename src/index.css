@@ -27,6 +27,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
+  
 }
 
 h1 {
@@ -84,6 +85,7 @@ input {
   flex-direction: column;
   gap: 3.2rem;
   align-items: center;
+  
 }
 
 .actions button,
@@ -98,7 +100,7 @@ input {
 .list ul {
   list-style: none;
   width: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -106,7 +108,21 @@ input {
   justify-content: center;
   align-content: start;
 }
+/*-------------------- Styling the scrollbar----------------- */
+.list ul::-webkit-scrollbar {
+  width: 8px;  /* Reducing the width of the scrollbar */
+}
 
+.list ul::-webkit-scrollbar-track {
+  background: #5a3e2b;  /* Optional: style for the track */
+}
+
+.list ul::-webkit-scrollbar-thumb {
+  background-color: darkgrey;  /* Optional: style for the thumb */
+  border-radius: 10px;  /* Optional: rounded corners for the thumb */
+  border: 2px solid grey;  /* Optional: border for the thumb */
+}
+/*-------------------- Styling the scrollbar----------------- */
 .list li {
   display: flex;
   align-items: center;
