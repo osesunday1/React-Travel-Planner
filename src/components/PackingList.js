@@ -19,7 +19,8 @@ export default function PackingList({ addItem, setAddItem, handleToggleItem }) {
   }
   if (sortBy === "packed"){sortedItem =addItem.slice().sort((a,b)=> Number(a.packed)- Number (b.packed))}
 
-let arr = [1,2,3,4,5,6]
+
+  
   return (
     <>
       <div className="list">
