@@ -9,7 +9,7 @@ export default function PackingList({ addItem, setAddItem, handleToggleItem }) {
   }
 
   function clearListHandler(){
-    setAddItem(e=> addItem.splice(0, arr.length))
+    setAddItem(e=> addItem.splice(0, addItem.length))
   }
 
   let sortedItem
@@ -20,7 +20,7 @@ export default function PackingList({ addItem, setAddItem, handleToggleItem }) {
   if (sortBy === "packed"){sortedItem =addItem.slice().sort((a,b)=> Number(a.packed)- Number (b.packed))}
 
 
-  
+
   return (
     <>
       <div className="list">
